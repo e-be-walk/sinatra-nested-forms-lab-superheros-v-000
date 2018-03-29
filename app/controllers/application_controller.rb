@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require '/config/environment.rb'
 
 class App < Sinatra::Base
 
@@ -11,12 +12,12 @@ class App < Sinatra::Base
     post '/teams' do
       @team = Team.new(params[:team])
 
-      params[:team][:heroes].each do |details| 
+      params[:team][:heroes].each do |details|
         Hero.new(details)
-      end 
+      end
 
-      @heroes = Hero.all 
-      
+      @heroes = Hero.all
+
       erb :team
     end
 
