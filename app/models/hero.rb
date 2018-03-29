@@ -15,4 +15,3 @@ class Hero
   end
 end
 
-end
